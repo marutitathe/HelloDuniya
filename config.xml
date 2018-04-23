@@ -49,14 +49,6 @@
         <splash density="port-xhdpi" src="www/res/screen/android/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="www/res/screen/android/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" />
-
-        <support-screens
-              android:anyDesity="true"
-              android:resizable="false"
-              android:smallScreens="true"
-              android:normalScreens="true"
-              android:largeScreens="true"
-              android:xlargeScreens="true" />      
     </platform>
     <!--<platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
