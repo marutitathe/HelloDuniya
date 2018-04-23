@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.maruti.robopet" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>RoboPet</name>
     <description>
-        RoboPet application for personal usage tools.
     </description>
     <author email="marutitathe@gmail.com.com" href="http://www.marutitathe.com">
         Maruti Tathe
@@ -58,7 +56,6 @@
               android:largeScreens="true"
               android:xlargeScreens="true" />      
     </platform>
-    <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
@@ -107,7 +104,6 @@
         <icon height="150" platform="windows" src="www/res/icon/windows/Wide310x150Logo.scale-100.png" width="310" />
         <icon height="360" platform="windows" src="www/res/icon/windows/Wide310x150Logo.scale-240.png" width="744" />
         <splash height="1920" platform="windows" src="www/res/screen/windows/SplashScreenPhone.scale-240.png" width="1152" />
-    </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
