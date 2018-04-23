@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.maruti.robopet" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.maruti.helloduniya" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Camera">
         <param name="browser-package" value="Camera" />
     </feature>
@@ -8,10 +8,10 @@
     </feature>
     <name>RoboPet</name>
     <description>
-        RoboPet application for personal usage tools.
+        Your Own Robot Kutta.
     </description>
     <author email="marutitathe@gmail.com.com" href="http://www.marutitathe.com">
-        Maruti Tathe
+        Maruti Tathe V2
     </author>
     <content src="index.html" />
     <access origin="*" />
