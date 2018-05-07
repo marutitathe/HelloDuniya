@@ -10,57 +10,43 @@
     <title>RoboPet</title>
     <script language="javascript">
         var screenHeight=0;
-        var screenWidth=0;
+        var screenWidth = 0;
+        var canvas;
         function getsetScreenSize()
         {
             screenWidth = window.screen.width;
             screenHeight = window.screen.height;
 
-            var canvas = document.getElementById("mainCanvas");
+            canvas = document.getElementById("mainCanvas");
             canvas.style.height = screenHeight + "px";
 
-            var canvasBody = canvas.querySelector(".body");
+            var canvasBody = canvas.querySelector(".canvasBody");
             canvasBody.style.height = (screenHeight - 50 - 40) + "px"; //Remove TitleHeight and FooterHeight from body height
         }
 
         function goPage(pageName)
         {
+            alert(pageName)
             window.location.href = pageName;
         }
+
+
+
     </script>
 
-    
+
 </head>
 <body>
     <div id="mainCanvas">
         <div class="canvasTitle">
             <img src="img\logo.png" alt="RoboPet" />
             RoboPet
-            <div >Apka Apna Paltu Robot Kutta</div>
+            <div>Apka Apna Paltu Robot Kutta</div>
         </div>
         <div class="canvasBody">
-            <div class="menuList" >
-                <div class="menuItem" onclick="goPage('gmailActivity.html');">
-                    <img src="img/gmail.png" alt="GMail Activity" />GMail Activity
-                </div>
-                <div class="menuItem" onclick="goPage('incomeExpenseList.html');">
-                    <img src="" alt="" />Income / Expense
-                </div>
-                <div class="menuItem">
-                    <img src="" alt="" />Borrowing / Lending
-                </div>
-                <div class="menuItem">
-                    <img src="" alt="" />Aur Kuch To
-                </div>
-                <div class="menuItem">
-                    <img src="" alt="" />Aur Kuch To
-                </div>
-                <div class="menuItem">
-                    <img src="" alt="" />Aur Kuch To
-                </div>
-            </div>
+
         </div>
-        <div class="canvasFooter" ></div>
+        <div class="canvasFooter"></div>
     </div>
     <script>
         getsetScreenSize();
