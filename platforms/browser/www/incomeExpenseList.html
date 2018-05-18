@@ -7,12 +7,71 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
+
     <script type="text/javascript" src="js/main.js"></script>
     <title>RoboPet</title>
     <script language="javascript">
 
+        var db = null;
 
+        document.addEventListener("deviceready", onDeviceReady, false);
 
+        function loadList()
+        {
+
+            var rowCount = 50;
+            for (var i = 0; i <= rowCount-1; i++) {
+                var strRow = "<div class='incExpViewIE'>" +
+                            "    <div class='incExpDateIE'>20/04/2018</div>" +
+                            "    <div class='incExpInfoIE'>General Expenses" +
+                            "        <div class='incExpDetailIE'>asdf asdf adsf adsf adsf adsf asdf adsf ads f</div>" +
+                            "    </div>" +
+                            "    <div class='incExpAmountIE'>999.50</div>" +
+                            "    <div style='clear:both'></div>" +
+                            "</div>";
+            }
+        }
+
+        function onDeviceReady() 
+        {
+            logStep("1) DB Creation (Or Opening) Started.", 1); 
+            try {
+                
+                //db = window.sqlitePlugin.openDatabase({
+                //    name: 'roboPet.db',
+                //    location: 'default',
+                //});
+                db = window.sqlitePlugin.openDatabase({
+                    name: "roboPet.db", location: "default", androidDatabaseImplementation: 2
+                 });
+
+                logStep("2) Creating Tables If Not Present.", 0);
+
+                db.open(successSQL, errorSQL);
+
+                db.transaction(function(tx) {
+                    tx.executeSql("CREATE TABLE IF NOT EXISTS IncExp(id integer primary key, IncExp integer, IEDate text, category integer, IEDetail text, Amount real)");
+                }, errorSQL);
+
+                logStep("3) Retrieving data from IncExp table.", 0);
+
+            } catch (e) {
+                logStep(e.message.trim(),0);
+            }
+        }
+
+        function errorSQL(err)
+        {
+            logStep("Error Processing SQL Query :" + err);
+        }
+
+        function successSQL()
+        {
+            logStep("Success");
+        }
 
     </script>
 
@@ -22,8 +81,8 @@
     <div id="mainCanvas">
         <div class="canvasTitle">
             <img src="img\backbutton1.png" alt="goBack" onclick="javascript: window.history.back();" />
-            RoboPet
-            <div>Apka Apna Paltu Robot Kutta</div>
+            Income / Expense
+            <div id="subTitle">Track Income & Control Expenses</div>
         </div>
         <div class="canvasBody">
             <div class="itemIE">
@@ -268,6 +327,9 @@
     </div>
     <script>
         getsetScreenSize();
+
     </script>
+
+
 </body>
 </html>
